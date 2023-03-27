@@ -82,6 +82,7 @@ test('deploy should call IPFSHttpClient.create with correct options', async () =
         Buffer.from(`${testOptions.IPFS_USER}:${testOptions.IPFS_PASS}`).toString('base64'),
       'Content-Encoding': 'utf-8',
     },
+    timeout: '5m',
   });
 });
 
@@ -159,21 +160,18 @@ test('deploy should log added CIDs with the provided log function', async () => 
   // Import the module and call the function
   const { deploy } = await import('./deploy.mjs');
 
-  // Create a custom log function to capture the log output
-  const logOutput = [];
-  const customLog = (cid, path) => {
-    logOutput.push({ cid, path });
-  };
-
+  const log = jest.fn();
   await deploy({
-    log: customLog,
+    log,
     srcDir: tempDir,
   });
 
   // Check if the log function was called with the correct CIDs and paths
-  expect(logOutput).toEqual([
-    { cid: 'QmFile2', path: 'www/css/file2.css' },
-    { cid: 'QmFile1', path: 'www/file1.html' },
-    { cid: 'QmRoot', path: 'www' },
+  expect(log.mock.calls).toEqual([
+    ['www/css/file2.css'],
+    ['www/file1.html'],
+    ['QmFile2', 'www/css/file2.css'],
+    ['QmFile1', 'www/file1.html'],
+    ['QmRoot', 'www'],
   ]);
 });
