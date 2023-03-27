@@ -48,7 +48,9 @@ export async function deploy({
   });
 
   let rootCid;
-  for await (const result of ipfs.addAll(files)) {
+  for await (const result of ipfs.addAll(files, {
+    progress: (bytes, filename) => log('...', filename, bytes),
+  })) {
     log(result.cid.toString(), result.path);
     if (result.path === root) {
       rootCid = result.cid.toString();
