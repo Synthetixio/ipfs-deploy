@@ -888,21 +888,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@noisekit/ipfs-deploy@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "@noisekit/ipfs-deploy@workspace:."
-  dependencies:
-    debug: ^4.3.4
-    dotenv: ^16.0.3
-    ipfs-http-client: ^60.0.0
-    jest: ^29.5.0
-    jest-junit: ^16.0.0
-    prettier: ^2.8.7
-  bin:
-    ipfs-deploy: bin.mjs
-  languageName: unknown
-  linkType: soft
-
 "@npmcli/fs@npm:^2.1.0":
   version: 2.1.2
   resolution: "@npmcli/fs@npm:2.1.2"
@@ -1020,6 +1005,21 @@ __metadata:
   checksum: c62aa98e7cefda8dedc101ce227abc888dc46b8ff9706c5f0a8dfd9c3ada97d0a5611384738d9ba0b26b59f99c2ba24efece8e779bb08329e9e87358fa309824
   languageName: node
   linkType: hard
+
+"@synthetixio/ipfs-deploy@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "@synthetixio/ipfs-deploy@workspace:."
+  dependencies:
+    debug: ^4.3.4
+    dotenv: ^16.0.3
+    ipfs-http-client: ^60.0.0
+    jest: ^29.5.0
+    jest-junit: ^16.0.0
+    prettier: ^2.8.7
+  bin:
+    ipfs-deploy: bin.mjs
+  languageName: unknown
+  linkType: soft
 
 "@tootallnate/once@npm:2":
   version: 2.0.0

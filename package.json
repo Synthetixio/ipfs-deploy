@@ -1,5 +1,5 @@
 {
-  "name": "@noisekit/ipfs-deploy",
+  "name": "@synthetixio/ipfs-deploy",
   "version": "1.0.3",
   "publishConfig": {
     "access": "public"
@@ -21,7 +21,8 @@
   "scripts": {
     "test": "NODE_OPTIONS=--experimental-vm-modules jest",
     "pretty": "prettier --write .",
-    "pretty:check": "prettier --check ."
+    "pretty:check": "prettier --check .",
+    "postversion": "git push --follow-tags"
   },
   "dependencies": {
     "debug": "^4.3.4",
