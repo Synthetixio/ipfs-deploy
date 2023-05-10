@@ -1,11 +1,11 @@
-# ipfs-deploy
+# @synthetixio/ipfs-deploy
 
 `ipfs-deploy` is a command-line tool for deploying static websites to an auth-protected IPFS cluster. It takes care of recursively adding the files in the specified source directory to the IPFS cluster, authenticating with the cluster using provided credentials, and outputting the IPFS hash (CID) of the root folder.
 
 ## Install
 
 ```sh
-npm install -g @noisekit/ipfs-deploy
+npm install -g @synthetixio/ipfs-deploy
 ```
 
 ## ENV
